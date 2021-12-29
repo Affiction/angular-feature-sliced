@@ -25,11 +25,15 @@ export const initialState: State = taskAdapter.getInitialState({
 
 const taskReducer = createReducer(
   initialState,
-  on(TaskActions.init, (state) => ({ ...state, loaded: false, error: null })),
-  on(TaskActions.loadTaskSuccess, (state, { task }) =>
+  on(TaskActions.loadAllTasks, (state) => ({
+    ...state,
+    loaded: false,
+    error: null,
+  })),
+  on(TaskActions.loadTasksSuccess, (state, { task }) =>
     taskAdapter.setAll(task, { ...state, loaded: true })
   ),
-  on(TaskActions.loadTaskFailure, (state, { error }) => ({ ...state, error }))
+  on(TaskActions.loadTasksFailure, (state, { error }) => ({ ...state, error }))
 );
 
 export function reducer(state: State | undefined, action: Action) {

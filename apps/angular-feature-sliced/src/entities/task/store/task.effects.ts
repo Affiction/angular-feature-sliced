@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
-import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { Actions, createEffect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/angular';
+import { map } from 'rxjs/operators';
+import { typicodeApi } from 'shared/api';
 
 import * as TaskActions from './task.actions';
 import * as TaskFeature from './task.reducer';
 
 @Injectable()
 export class TaskEffects {
-  init$ = createEffect(() =>
-    this.dataPersistence.fetch(TaskActions.init, {
-      run: (
-        action: ReturnType<typeof TaskActions.init>,
-        state: TaskFeature.TaskPartialState
-      ) => {
-        // Your custom service 'load' logic goes here. For now just return a success action...
-        return TaskActions.loadTaskSuccess({ task: [] });
+  loadAllTasks$ = createEffect(() =>
+    this.dataPersistence.fetch(TaskActions.loadAllTasks, {
+      run: () => {
+        return this.typicodeApi
+          .getTasksList()
+          .pipe(map((task) => TaskActions.loadTasksSuccess({ task })));
       },
-      onError: (action: ReturnType<typeof TaskActions.init>, error) => {
+      onError: (_, error) => {
         console.error('Error', error);
-        return TaskActions.loadTaskFailure({ error });
+        return TaskActions.loadTasksFailure({ error });
       },
     })
   );
 
   constructor(
     private readonly actions$: Actions,
-    private readonly dataPersistence: DataPersistence<TaskFeature.TaskPartialState>
+    private readonly dataPersistence: DataPersistence<TaskFeature.TaskPartialState>,
+    private readonly typicodeApi: typicodeApi.TypicodeService
   ) {}
 }

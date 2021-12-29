@@ -1,14 +1,12 @@
 import { createAction, props } from '@ngrx/store';
 import { Task } from 'shared/api';
 
-export const init = createAction('[Task Page] Init');
-
-export const loadTaskSuccess = createAction(
-  '[Task/API] Load Task Success',
+export const loadAllTasks = createAction('[Task/API] Load All Tasks');
+export const loadTasksSuccess = createAction(
+  '[Task/API] Load All Tasks Success',
   props<{ task: Task[] }>()
 );
-
-export const loadTaskFailure = createAction(
-  '[Task/API] Load Task Failure',
+export const loadTasksFailure = createAction(
+  '[Task/API] Load All Tasks Failure',
   props<{ error: unknown }>()
 );
