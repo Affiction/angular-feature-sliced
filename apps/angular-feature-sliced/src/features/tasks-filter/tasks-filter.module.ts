@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MaterialModule, SharedModule } from 'shared/modules';
+
+import { TasksFilterComponent } from './components';
+import { ConfigService } from './config.service';
+
+const EXPORT_COMPONENTS = [TasksFilterComponent];
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule],
-  exports: [],
-  providers: [],
+  declarations: EXPORT_COMPONENTS,
+  imports: [SharedModule, MaterialModule],
+  exports: EXPORT_COMPONENTS,
+  providers: [ConfigService],
 })
-export class TaskFilterModule {}
+export class TasksFilterModule {}
