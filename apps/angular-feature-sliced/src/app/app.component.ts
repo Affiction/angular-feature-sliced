@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'angular-feature-sliced-root',
+  selector: 'fs-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

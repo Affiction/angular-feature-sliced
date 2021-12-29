@@ -14,6 +14,7 @@
     }
   ],
   "compilerOptions": {
+    "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

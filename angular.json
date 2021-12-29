@@ -5,11 +5,13 @@
       "projectType": "application",
       "root": "apps/angular-feature-sliced",
       "sourceRoot": "apps/angular-feature-sliced/src",
-      "prefix": "angular-feature-sliced",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-feature-sliced",
             "index": "apps/angular-feature-sliced/src/index.html",
@@ -21,7 +23,10 @@
               "apps/angular-feature-sliced/src/favicon.ico",
               "apps/angular-feature-sliced/src/assets"
             ],
-            "styles": ["apps/angular-feature-sliced/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/angular-feature-sliced/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -86,7 +91,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-feature-sliced"],
+          "outputs": [
+            "coverage/apps/angular-feature-sliced"
+          ],
           "options": {
             "jestConfig": "apps/angular-feature-sliced/jest.config.js",
             "passWithNoTests": true
@@ -114,14 +121,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-feature-sliced-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-feature-sliced-e2e/**/*.{js,ts}"
+            ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["angular-feature-sliced"]
+      "implicitDependencies": [
+        "angular-feature-sliced"
+      ]
     }
   }
 }
