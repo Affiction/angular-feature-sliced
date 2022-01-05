@@ -1,1 +1,19 @@
-<p>tasks-list works!</p>
+<div class="task-list">
+  <fs-tasks-filter class="task-list__filter"></fs-tasks-filter>
+
+  <ul class="task-list__list">
+    <ng-container
+      *ngIf="taskFacade.filteredTasks$ | async as tasks; else spinner;"
+    >
+      <li *ngFor="let task of tasks">{{task.title}}</li>
+    </ng-container>
+  </ul>
+</div>
+
+<ng-template #spinner>
+  <mat-progress-spinner
+    color="primary"
+    mode="indeterminate"
+    value="50"
+  ></mat-progress-spinner>
+</ng-template>

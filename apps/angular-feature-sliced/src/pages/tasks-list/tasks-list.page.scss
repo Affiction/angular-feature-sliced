@@ -1,3 +1,16 @@
 :host {
   display: block;
+  padding: 20px;
+}
+
+.task-list {
+  margin: 0 auto;
+  max-width: 500px;
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom:  40px;
+  }
 }

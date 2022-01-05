@@ -7,9 +7,10 @@ import { Task } from 'shared/api';
 export const TASK_FEATURE_KEY = 'task';
 
 export interface State extends EntityState<Task> {
-  selectedId?: string | number; // which Task record has been selected
-  loaded: boolean; // has the Task list been loaded
-  error?: unknown; // last known error (if any)
+  selectedId?: string | number;
+  loaded: boolean;
+  error?: unknown;
+  filteredTasks: Task[];
 }
 
 export interface TaskPartialState {
@@ -19,8 +20,8 @@ export interface TaskPartialState {
 export const taskAdapter: EntityAdapter<Task> = createEntityAdapter<Task>();
 
 export const initialState: State = taskAdapter.getInitialState({
-  // set initial required properties
   loaded: false,
+  filteredTasks: [],
 });
 
 const taskReducer = createReducer(
@@ -30,8 +31,8 @@ const taskReducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(TaskActions.loadTasksSuccess, (state, { task }) =>
-    taskAdapter.setAll(task, { ...state, loaded: true })
+  on(TaskActions.loadTasksSuccess, (state, { tasks }) =>
+    taskAdapter.setAll(tasks, { ...state, loaded: true, filteredTasks: tasks })
   ),
   on(TaskActions.loadTasksFailure, (state, { error }) => ({ ...state, error }))
 );

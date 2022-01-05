@@ -1,11 +1,12 @@
 import { InjectionToken, Type } from '@angular/core';
-import { Action, ActionReducerMap, MetaReducer } from '@ngrx/store';
-
-import { environment } from 'environments/environment';
 import * as fromRouter from '@ngrx/router-store';
+import { Action, ActionReducerMap, MetaReducer } from '@ngrx/store';
+import { environment } from 'environments/environment';
+
+import { taskStore } from 'entities/task';
 
 /**
- * Every reducer module's default export is the reducer function itself. In
+ * Every reducer module's default export is the reducer function it¬self. In
  * addition, each module should export a type or interface that describes
  * the state of the reducer plus any selector functions. The `* as`
  * notation packages up all of the exports into a single object.
@@ -16,6 +17,7 @@ import * as fromRouter from '@ngrx/router-store';
  */
 export interface State {
   router: fromRouter.RouterState;
+  [taskStore.TASK_FEATURE_KEY]: taskStore.State;
 }
 
 /**
@@ -28,6 +30,7 @@ export const ROOT_REDUCERS = new InjectionToken<
 >('Root reducers token', {
   factory: () => ({
     router: fromRouter.routerReducer,
+    [taskStore.TASK_FEATURE_KEY]: taskStore.reducer,
   }),
 });
 
@@ -40,4 +43,4 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   ? []
   : [];
 
-export const rootEffects: Type<unknown>[] = [];
+export const rootEffects: Type<unknown>[] = [taskStore.TaskEffects];

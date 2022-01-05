@@ -2,6 +2,7 @@
   <mat-button-toggle
     *ngFor="let filter of configService.filtersList"
     [value]="filter.id"
+    (click)="taskFacade.filterTasks(filter.config)"
   >
     {{ filter.title }}
   </mat-button-toggle>

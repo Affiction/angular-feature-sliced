@@ -14,7 +14,7 @@ export class TaskEffects {
       run: () => {
         return this.typicodeApi
           .getTasksList()
-          .pipe(map((task) => TaskActions.loadTasksSuccess({ task })));
+          .pipe(map((tasks) => TaskActions.loadTasksSuccess({ tasks })));
       },
       onError: (_, error) => {
         console.error('Error', error);

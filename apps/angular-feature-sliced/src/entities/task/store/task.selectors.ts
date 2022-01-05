@@ -34,3 +34,8 @@ export const getSelected = createSelector(
   getSelectedId,
   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
+
+export const getFilteredTasks = createSelector(
+  getTaskState,
+  (state: State) => state.filteredTasks
+);

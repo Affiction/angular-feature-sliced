@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ConfigService } from '../../config.service';
-
 import { taskStore } from 'entities/task';
+
+import { ConfigService } from '../../config.service';
 
 @Component({
   selector: 'fs-tasks-filter',
@@ -12,10 +12,6 @@ import { taskStore } from 'entities/task';
 export class TasksFilterComponent {
   constructor(
     public readonly configService: ConfigService,
-    private readonly taskFacade: taskStore.TaskFacade
+    public readonly taskFacade: taskStore.TaskFacade
   ) {}
-
-  ngOnInit(): void {
-    this.taskFacade.loadTasks();
-  }
 }
