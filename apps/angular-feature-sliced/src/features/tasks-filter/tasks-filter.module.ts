@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule, SharedModule } from 'shared/modules';
+import { MaterialModule, SharedModule } from 'shared';
 
 import { TasksFilterComponent } from './components';
 import { ConfigService } from './config.service';

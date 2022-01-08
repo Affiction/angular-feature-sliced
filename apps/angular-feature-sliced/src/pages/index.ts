@@ -1,1 +1,1 @@
-export * from './routing.module';
+export * from './app-routing.module';

@@ -13,7 +13,6 @@ const EXPORT_MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: EXPORT_MODULES,
   exports: EXPORT_MODULES,
 })
