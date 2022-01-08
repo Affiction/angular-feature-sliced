@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
-
-import { NotFoundPage, NotFoundPageModule } from './404';
-import { TasksListPage } from './tasks-list';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPage, NotFoundPageModule } from 'pages/not-found';
+import { TaskListModule, TasksListPage } from 'pages/tasks-list';
 
 const routes: Routes = [
   { path: '', redirectTo: '/tasks-list', pathMatch: 'full' },
@@ -20,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [NotFoundPageModule, RouterModule.forRoot(routes)],
+  imports: [NotFoundPageModule, TaskListModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
