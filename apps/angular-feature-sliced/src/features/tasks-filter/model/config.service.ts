@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { taskStore } from 'entities/task';
+import { taskModel } from 'entities/task';
 
 export type Filter = {
   id: number;
   title: string;
-  config: taskStore.QueryConfig;
+  config: taskModel.QueryConfig;
 };
 
 export const filters: Record<number, Filter> = {

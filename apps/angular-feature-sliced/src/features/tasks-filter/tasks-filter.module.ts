@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { UiKitModule, SharedModule } from 'shared';
 
 import { TasksFilterComponent } from './components';
-import { ConfigService } from './config.service';
+import { ConfigService } from './model';
 
 const EXPORT_COMPONENTS = [TasksFilterComponent];
 
