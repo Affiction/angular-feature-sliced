@@ -6,4 +6,4 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   exports: [MatCheckboxModule, MatButtonToggleModule, MatProgressSpinnerModule],
 })
-export class MaterialModule {}
+export class UiKitModule {}

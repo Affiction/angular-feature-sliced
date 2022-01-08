@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule, SharedModule } from 'shared';
+import { UiKitModule, SharedModule } from 'shared';
 
 import { TasksFilterComponent } from './components';
 import { ConfigService } from './config.service';
@@ -8,7 +8,7 @@ const EXPORT_COMPONENTS = [TasksFilterComponent];
 
 @NgModule({
   declarations: EXPORT_COMPONENTS,
-  imports: [SharedModule, MaterialModule],
+  imports: [SharedModule, UiKitModule],
   exports: EXPORT_COMPONENTS,
   providers: [ConfigService],
 })
