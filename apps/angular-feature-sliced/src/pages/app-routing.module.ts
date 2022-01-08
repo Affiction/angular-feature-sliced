@@ -13,8 +13,8 @@ const routes: Routes = [
         (m) => m.TaskDetailsRoutingModule
       ),
   },
-  { path: '404', component: NotFoundPage },
-  { path: '**', redirectTo: '/404' },
+  { path: 'not-found', component: NotFoundPage },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({
