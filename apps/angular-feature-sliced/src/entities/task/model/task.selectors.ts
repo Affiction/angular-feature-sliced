@@ -38,10 +38,7 @@ export const getSelectedId = createSelector(
 export const getSelected = createSelector(
   getTaskEntities,
   routerModel.selectRouteParam('id'),
-  (entities, selectedId) => {
-    console.log('selectedId:', selectedId);
-    return selectedId ? entities[selectedId] : undefined;
-  }
+  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
 
 export const getQueryConfig = createSelector(
