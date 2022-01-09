@@ -1,11 +1,17 @@
 <div class="task-list">
   <fs-tasks-filter class="task-list__filter"></fs-tasks-filter>
 
-  <ul class="task-list__list">
+  <ul class="task-list__list task-list">
     <ng-container
       *ngIf="taskFacade.filteredTasks$ | async as tasks; else spinner;"
     >
-      <li *ngFor="let task of tasks">{{task.title}}</li>
+      <fs-task-row
+        *ngFor="let task of tasks"
+        [task]="task"
+        class="task-list__row"
+      >
+        {{task.title}}
+      </fs-task-row>
     </ng-container>
   </ul>
 </div>

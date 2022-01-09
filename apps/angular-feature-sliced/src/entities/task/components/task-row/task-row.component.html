@@ -1,6 +1,4 @@
-<div class="row">
+<mat-card *ngIf="task">
   <ng-content select=".checkbox"></ng-content>
-
-</div>
-
-<p>Task Row {{ task | json }}</p>
+  {{ task.title }}
+</mat-card>

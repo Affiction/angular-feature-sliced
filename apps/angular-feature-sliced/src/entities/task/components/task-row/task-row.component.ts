@@ -9,5 +9,5 @@ import { Task } from 'shared/api';
 })
 export class TaskRowComponent {
   @Input()
-  task!: Task;
+  task?: Task;
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { taskModel } from 'entities/task';
+import { TaskFacade } from 'entities/task';
 
 @Component({
   selector: 'fs-tasks-list',
@@ -8,7 +8,7 @@ import { taskModel } from 'entities/task';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TasksListPage implements OnInit {
-  constructor(public readonly taskFacade: taskModel.TaskFacade) {}
+  constructor(public readonly taskFacade: TaskFacade) {}
 
   ngOnInit() {
     this.taskFacade.loadTasks();
