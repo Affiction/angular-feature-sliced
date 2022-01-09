@@ -2,7 +2,6 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { TASK_FEATURE_KEY, State, taskAdapter } from './task.reducer';
 import { routerModel } from 'shared/lib';
 
-// Lookup the 'Task' feature state managed by NgRx
 export const getTaskState = createFeatureSelector<State>(TASK_FEATURE_KEY);
 
 const { selectAll, selectEntities } = taskAdapter.getSelectors();
@@ -28,11 +27,6 @@ export const getAllTask = createSelector(getTaskState, (state: State) =>
 
 export const getTaskEntities = createSelector(getTaskState, (state: State) =>
   selectEntities(state)
-);
-
-export const getSelectedId = createSelector(
-  getTaskState,
-  (state: State) => state.selectedId
 );
 
 export const getSelected = createSelector(
