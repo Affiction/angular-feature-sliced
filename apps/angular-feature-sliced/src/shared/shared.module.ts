@@ -4,16 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-const EXPORT_MODULES = [
-  BrowserAnimationsModule,
-  CommonModule,
-  HttpClientModule,
-  FormsModule,
-  ReactiveFormsModule,
-];
-
 @NgModule({
-  imports: EXPORT_MODULES,
-  exports: EXPORT_MODULES,
+  exports: [
+    BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class SharedModule {}
