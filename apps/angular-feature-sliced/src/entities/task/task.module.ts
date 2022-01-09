@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { UiKitModule, SharedModule } from 'shared';
+import { SharedModule, UiKitModule } from 'shared';
 
 import { TaskCardComponent, TaskRowComponent } from './components';
+import { TaskStatusPipe } from './lib';
 
 @NgModule({
-  declarations: [TaskCardComponent, TaskRowComponent],
+  declarations: [TaskCardComponent, TaskRowComponent, TaskStatusPipe],
   imports: [SharedModule, UiKitModule],
-  exports: [TaskCardComponent, TaskRowComponent],
+  exports: [TaskCardComponent, TaskRowComponent, TaskStatusPipe],
 })
 export class TaskModule {}

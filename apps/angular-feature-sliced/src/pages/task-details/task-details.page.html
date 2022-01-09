@@ -1,3 +1,13 @@
-<ng-container *ngIf="loadTask$ | async"></ng-container>
-
-<div class="task-details">Task details</div>
+<ng-container *ngIf="taskFacade.selectedTask$ | async as task">
+  <fs-task-card
+    class="task-details"
+    [task]="task"
+    (backToTask)="location.back()"
+  >
+    <fs-toggle-task
+      [task]="task"
+      [withStatus]="true"
+      class="checkbox"
+    ></fs-toggle-task>
+  </fs-task-card>
+</ng-container>

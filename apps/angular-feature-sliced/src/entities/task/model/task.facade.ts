@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Task } from 'shared/api';
+import type { Task } from 'shared/api';
 
 import * as TaskActions from './task.actions';
 import { QueryConfig } from './task.models';

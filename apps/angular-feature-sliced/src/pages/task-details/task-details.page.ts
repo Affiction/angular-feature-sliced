@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { TaskFacade } from 'entities/task';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'fs-task-details',
@@ -10,14 +9,8 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskDetailsPage {
-  loadTask$ = this.route.params.pipe(
-    tap(({ id }) => {
-      this.taskFacade.loadTask(id);
-    })
-  );
-
   constructor(
     public readonly taskFacade: TaskFacade,
-    private readonly route: ActivatedRoute
+    public readonly location: Location
   ) {}
 }

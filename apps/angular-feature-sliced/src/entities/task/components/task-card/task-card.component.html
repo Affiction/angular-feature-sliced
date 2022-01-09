@@ -1,3 +1,10 @@
-<mat-card *ngIf="task">
-  <mat-card-title>{{ task.title }}</mat-card-title>
+<mat-card *ngIf="task" class="card">
+  <mat-card-title class="card__title">Task#{{ task.id }}</mat-card-title>
+  <mat-card-content>{{ task.title }}</mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="backToTask.emit()">Back to TasksList</button>
+  </mat-card-actions>
+  <mat-card-footer class="card__footer">
+    <ng-content select=".checkbox"></ng-content>
+  </mat-card-footer>
 </mat-card>

@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Task } from 'shared/api';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import type { Task } from 'shared/api';
 
 @Component({
   selector: 'fs-task-card',
@@ -10,4 +16,7 @@ import { Task } from 'shared/api';
 export class TaskCardComponent {
   @Input()
   task!: Task;
+
+  @Output()
+  backToTask: EventEmitter<void> = new EventEmitter();
 }

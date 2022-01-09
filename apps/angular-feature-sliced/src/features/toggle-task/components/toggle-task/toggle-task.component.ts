@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Task } from 'shared/api';
+import type { Task } from 'shared/api';
 import { TaskFacade } from 'entities/task';
 
 @Component({

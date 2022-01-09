@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Task } from 'shared/api';
+import type { Task } from 'shared/api';
 import { QueryConfig } from './task.models';
 
 export const loadAllTasks = createAction('[Task/API] Load All Tasks');

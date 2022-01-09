@@ -1,4 +1,3 @@
-<mat-checkbox
-  [checked]="task.completed"
-  (click)="taskFacade.toggleTask(task)"
-></mat-checkbox>
+<mat-checkbox [checked]="task.completed" (click)="taskFacade.toggleTask(task)">
+  {{ withStatus ? (task | taskStatus) : null }}
+</mat-checkbox>

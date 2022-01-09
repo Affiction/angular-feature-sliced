@@ -1,2 +1,2 @@
-export { UiKitModule } from './material.module';
+export { UiKitModule } from './ui-kit.module';
 export { SharedModule } from './shared.module';
