@@ -37,7 +37,7 @@ export class ConfigService {
     return this.filters[id];
   }
 
-  selectFilter(id: number) {
+  selectFilter(id: number): void {
     this.currentFilter = id;
   }
 }
