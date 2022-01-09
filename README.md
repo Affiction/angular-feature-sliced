@@ -6,7 +6,6 @@
 Sharead book service client (demo-only!)
 
 - [Architecture design guidelines](https://feature-sliced.design/)
-- [Contributing guide](CONTRIBUTING.md)
 
 ## Technology stack
 
