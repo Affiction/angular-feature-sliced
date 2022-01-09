@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TaskFacade } from 'entities/task';
+import { Task } from 'shared/api';
 
 @Component({
   selector: 'fs-tasks-list',
@@ -12,5 +13,9 @@ export class TasksListPage implements OnInit {
 
   ngOnInit() {
     this.taskFacade.loadTasks();
+  }
+
+  taskTrackBy(_: number, task: Task) {
+    return task.id;
   }
 }

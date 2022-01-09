@@ -6,7 +6,7 @@
     class="task-list__list task-list"
   >
     <fs-task-row
-      *ngFor="let task of tasks"
+      *ngFor="let task of tasks; trackBy: taskTrackBy "
       [task]="task"
       class="task-list__row"
     >
