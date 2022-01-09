@@ -1,13 +1,16 @@
 <mat-button-toggle-group
   name="taskFilter"
   aria-label="Task Filter"
-  [value]="configService.defaultFilter"
+  [value]="configService.currentFilter"
   [disabled]="taskFacade.loading$ | async"
 >
   <mat-button-toggle
     *ngFor="let filter of configService.filtersList"
     [value]="filter.id"
-    (click)="taskFacade.filterTasks(filter.config)"
+    (click)="
+      taskFacade.filterTasks(filter.config);
+      configService.selectFilter(filter.id)
+    "
   >
     {{ filter.title }}
   </mat-button-toggle>

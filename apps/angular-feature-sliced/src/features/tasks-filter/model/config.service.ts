@@ -13,7 +13,7 @@ export const DEFAULT_FILTER = 1;
   providedIn: 'root',
 })
 export class ConfigService {
-  readonly defaultFilter = DEFAULT_FILTER;
+  public currentFilter: number = DEFAULT_FILTER;
   readonly filters: Record<number, Filter> = {
     1: {
       id: 1,
@@ -35,5 +35,9 @@ export class ConfigService {
 
   getFilterById(id: number): Filter {
     return this.filters[id];
+  }
+
+  selectFilter(id: number) {
+    this.currentFilter = id;
   }
 }
