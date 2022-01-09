@@ -2,6 +2,12 @@
   display: block;
 }
 
+.card {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .completed {
   opacity: .5;
   text-decoration: line-through;
