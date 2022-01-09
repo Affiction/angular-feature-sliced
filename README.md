@@ -2,6 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/select-name/sharead-frontend)
 [![FeatureSliced](https://img.shields.io/badge/Powered%20by-%F0%9F%8D%B0%20Feature%20Sliced-%235c9cb5)](https://feature-sliced.design/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/780a3c97-cded-4063-9f74-6e325d98e97f/deploy-status)](https://app.netlify.com/sites/laughing-boyd-e3122c/deploys)
 
 Sharead book service client (demo-only!)
 
