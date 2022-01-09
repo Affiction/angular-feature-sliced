@@ -8,6 +8,5 @@ import { ToggleTaskComponent } from './components';
   declarations: [ToggleTaskComponent],
   imports: [SharedModule, UiKitModule, TaskModule],
   exports: [ToggleTaskComponent],
-  providers: [],
 })
 export class ToggleTaskModule {}

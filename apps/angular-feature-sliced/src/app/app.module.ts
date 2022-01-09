@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from 'app/app.component';
-import { RootStoreModule } from 'app/core';
+import { AppStoreModule } from 'app/core';
 import { AppRoutingModule } from 'pages';
 
 @NgModule({
@@ -11,9 +11,8 @@ import { AppRoutingModule } from 'pages';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RootStoreModule,
+    AppStoreModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,1 +1,1 @@
-export { RootStoreModule } from './store.module';
+export { AppStoreModule } from './store.module';

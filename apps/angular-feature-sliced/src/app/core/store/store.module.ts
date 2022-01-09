@@ -31,4 +31,4 @@ import { metaReducers, ROOT_REDUCERS, rootEffects } from './store';
       : [],
   ],
 })
-export class RootStoreModule {}
+export class AppStoreModule {}

@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { NotFoundPage } from './not-found.page';
-
 import { SharedModule } from 'shared';
 
-const EXPORT_COMPONENTS = [NotFoundPage];
+import { NotFoundPage } from './not-found.page';
 
 @NgModule({
-  declarations: EXPORT_COMPONENTS,
+  declarations: [NotFoundPage],
   imports: [SharedModule],
-  exports: EXPORT_COMPONENTS,
-  providers: [],
+  exports: [NotFoundPage],
 })
 export class NotFoundPageModule {}
