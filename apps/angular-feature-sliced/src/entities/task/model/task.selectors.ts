@@ -8,7 +8,7 @@ const { selectAll, selectEntities } = taskAdapter.getSelectors();
 
 export const getTaskLoaded = createSelector(
   getTaskState,
-  (state: State) => state.loaded
+  (state: State) => state.loading
 );
 
 export const getTaskError = createSelector(

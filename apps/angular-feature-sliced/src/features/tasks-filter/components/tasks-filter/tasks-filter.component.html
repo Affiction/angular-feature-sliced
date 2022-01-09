@@ -2,6 +2,7 @@
   name="taskFilter"
   aria-label="Task Filter"
   [value]="configService.defaultFilter"
+  [disabled]="taskFacade.loaded$ | async"
 >
   <mat-button-toggle
     *ngFor="let filter of configService.filtersList"
