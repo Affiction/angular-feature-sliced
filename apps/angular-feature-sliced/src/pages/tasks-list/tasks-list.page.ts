@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskFacade } from 'entities/task';
+import { filter, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'fs-tasks-list',
@@ -8,17 +9,16 @@ import { TaskFacade } from 'entities/task';
   styleUrls: ['./tasks-list.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TasksListPage implements OnInit {
+export class TasksListPage {
+  loadTasks$ = this.taskFacade.filteredTasks$.pipe(
+    filter((tasks) => tasks.length == 0),
+    tap(() => {
+      this.taskFacade.loadTasks();
+    })
+  );
+
   constructor(
     public readonly taskFacade: TaskFacade,
-    private readonly router: Router
+    public readonly router: Router
   ) {}
-
-  ngOnInit() {
-    this.taskFacade.loadTasks();
-  }
-
-  openDetails(id: number): void {
-    this.router.navigate(['/task-details', id]);
-  }
 }
