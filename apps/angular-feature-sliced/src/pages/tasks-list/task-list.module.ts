@@ -6,10 +6,8 @@ import { SharedModule, UiKitModule } from 'shared';
 
 import { TasksListPage } from './tasks-list.page';
 
-const EXPORT_COMPONENTS = [TasksListPage];
-
 @NgModule({
-  declarations: EXPORT_COMPONENTS,
+  declarations: [TasksListPage],
   imports: [
     SharedModule,
     UiKitModule,
@@ -17,6 +15,6 @@ const EXPORT_COMPONENTS = [TasksListPage];
     TasksFilterModule,
     ToggleTaskModule,
   ],
-  exports: EXPORT_COMPONENTS,
+  exports: [TasksListPage],
 })
 export class TaskListModule {}
