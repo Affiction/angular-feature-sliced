@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule, UiKitModule } from 'shared';
+
+import { ToggleTaskComponent } from './components';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule],
-  exports: [],
+  declarations: [ToggleTaskComponent],
+  imports: [SharedModule, UiKitModule],
+  exports: [ToggleTaskComponent],
   providers: [],
 })
 export class ToggleTaskModule {}
