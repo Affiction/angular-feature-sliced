@@ -9,7 +9,8 @@ export const TASK_FEATURE_KEY = 'task';
 
 export interface State extends EntityState<Task> {
   selectedId?: string | number;
-  loading: boolean;
+  loading?: boolean;
+  loaded?: boolean;
   error?: unknown;
   queryConfig?: QueryConfig;
 }
@@ -22,17 +23,19 @@ export const taskAdapter: EntityAdapter<Task> = createEntityAdapter<Task>();
 
 export const initialState: State = taskAdapter.getInitialState({
   loading: false,
+  loaded: false,
 });
 
 const taskReducer = createReducer(
   initialState,
   on(TaskActions.loadAllTasks, (state) => ({
     ...state,
+    loaded: false,
     loading: true,
     error: null,
   })),
   on(TaskActions.loadTasksSuccess, (state, { tasks }) =>
-    taskAdapter.setAll(tasks, { ...state, loading: false })
+    taskAdapter.setAll(tasks, { ...state, loading: false, loaded: true })
   ),
   on(TaskActions.loadTasksFailure, (state, { error }) => ({ ...state, error })),
 

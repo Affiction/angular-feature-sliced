@@ -6,9 +6,14 @@ export const getTaskState = createFeatureSelector<State>(TASK_FEATURE_KEY);
 
 const { selectAll, selectEntities } = taskAdapter.getSelectors();
 
-export const getTaskLoaded = createSelector(
+export const getTaskLoading = createSelector(
   getTaskState,
   (state: State) => state.loading
+);
+
+export const getTaskLoaded = createSelector(
+  getTaskState,
+  (state: State) => state.loaded
 );
 
 export const getTaskError = createSelector(

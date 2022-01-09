@@ -9,6 +9,7 @@ import * as TaskSelectors from './task.selectors';
 @Injectable({ providedIn: 'root' })
 export class TaskFacade {
   loaded$ = this.store.select(TaskSelectors.getTaskLoaded);
+  loading$ = this.store.select(TaskSelectors.getTaskLoading);
   allTask$ = this.store.select(TaskSelectors.getAllTask);
   selectedTask$ = this.store.select(TaskSelectors.getSelected);
   filteredTasks$ = this.store.select(TaskSelectors.getFilteredTasks);
