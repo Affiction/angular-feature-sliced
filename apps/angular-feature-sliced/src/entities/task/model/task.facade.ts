@@ -27,4 +27,8 @@ export class TaskFacade {
   toggleTask(task: Task) {
     this.store.dispatch(TaskActions.toggleTask({ task }));
   }
+
+  loadTask(id: number | string) {
+    this.store.dispatch(TaskActions.loadTask({ id }));
+  }
 }

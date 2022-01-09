@@ -21,3 +21,8 @@ export const toggleTask = createAction(
   '[Task] Toggle Task',
   props<{ task: Task }>()
 );
+
+export const loadTask = createAction(
+  '[Task/API] Load Current Task',
+  props<{ id: number | string }>()
+);

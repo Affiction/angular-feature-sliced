@@ -9,8 +9,8 @@ const routes: Routes = [
   {
     path: 'task-details/:id',
     loadChildren: () =>
-      import('./task-details/task-details-routing.module').then(
-        (m) => m.TaskDetailsRoutingModule
+      import('./task-details/task-details.module').then(
+        (m) => m.TaskDetailsModule
       ),
   },
   { path: 'not-found', component: NotFoundPage },

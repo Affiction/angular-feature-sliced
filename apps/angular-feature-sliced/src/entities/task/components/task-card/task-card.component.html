@@ -1,1 +1,3 @@
-<p>Task Card {{ task | json }}</p>
+<mat-card *ngIf="task">
+  <mat-card-title>{{ task.title }}</mat-card-title>
+</mat-card>

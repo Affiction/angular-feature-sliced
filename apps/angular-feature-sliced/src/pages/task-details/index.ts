@@ -1,1 +1,1 @@
-export * from './task-details-routing.module';
+export * from './task-details.module';

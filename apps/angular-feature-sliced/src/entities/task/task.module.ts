@@ -3,11 +3,9 @@ import { UiKitModule, SharedModule } from 'shared';
 
 import { TaskCardComponent, TaskRowComponent } from './components';
 
-const EXPORT_COMPONENTS = [TaskCardComponent, TaskRowComponent];
-
 @NgModule({
-  declarations: EXPORT_COMPONENTS,
+  declarations: [TaskCardComponent, TaskRowComponent],
   imports: [SharedModule, UiKitModule],
-  exports: [...EXPORT_COMPONENTS],
+  exports: [TaskCardComponent, TaskRowComponent],
 })
 export class TaskModule {}
