@@ -1,4 +1,8 @@
-<mat-button-toggle-group name="taskFilter" aria-label="Task Filter">
+<mat-button-toggle-group
+  name="taskFilter"
+  aria-label="Task Filter"
+  [value]="configService.defaultFilter"
+>
   <mat-button-toggle
     *ngFor="let filter of configService.filtersList"
     [value]="filter.id"

@@ -7,24 +7,6 @@ export type Filter = {
   config: taskModel.QueryConfig;
 };
 
-export const filters: Record<number, Filter> = {
-  1: {
-    id: 1,
-    title: 'All',
-    config: {},
-  },
-  2: {
-    id: 2,
-    title: 'Opened',
-    config: { completed: false },
-  },
-  3: {
-    id: 3,
-    title: 'Closed',
-    config: { completed: true },
-  },
-};
-
 export const DEFAULT_FILTER = 1;
 
 @Injectable({
@@ -32,7 +14,23 @@ export const DEFAULT_FILTER = 1;
 })
 export class ConfigService {
   readonly defaultFilter = DEFAULT_FILTER;
-  readonly filters = filters;
+  readonly filters: Record<number, Filter> = {
+    1: {
+      id: 1,
+      title: 'All',
+      config: {},
+    },
+    2: {
+      id: 2,
+      title: 'Opened',
+      config: { completed: false },
+    },
+    3: {
+      id: 3,
+      title: 'Closed',
+      config: { completed: true },
+    },
+  };
   readonly filtersList = Object.values(this.filters);
 
   getFilterById(id: number): Filter {
