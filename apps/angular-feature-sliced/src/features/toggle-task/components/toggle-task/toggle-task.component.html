@@ -1,1 +1,4 @@
-<mat-checkbox></mat-checkbox>
+<mat-checkbox
+  [checked]="task.completed"
+  (click)="taskFacade.toggleTask(task)"
+></mat-checkbox>

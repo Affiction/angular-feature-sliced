@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Task } from 'shared/api';
+import { TaskFacade } from 'entities/task';
 
 @Component({
   selector: 'fs-toggle-task',
@@ -13,4 +14,6 @@ export class ToggleTaskComponent {
 
   @Input()
   withStatus = false;
+
+  constructor(public readonly taskFacade: TaskFacade) {}
 }

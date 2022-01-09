@@ -1,3 +1,8 @@
 :host {
   display: block;
 }
+
+.completed {
+  opacity: .5;
+  text-decoration: line-through;
+}
