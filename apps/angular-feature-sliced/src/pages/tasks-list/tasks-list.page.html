@@ -11,6 +11,7 @@
           *ngFor="let task of tasks"
           [task]="task"
           class="task-list__row"
+          (click)="openDetails(task.id)"
         >
           <fs-toggle-task [task]="task" class="checkbox"></fs-toggle-task>
         </fs-task-row>

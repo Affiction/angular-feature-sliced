@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/tasks-list', pathMatch: 'full' },
   { path: 'tasks-list', component: TasksListPage },
   {
-    path: 'task-details',
+    path: 'task-details/:id',
     loadChildren: () =>
       import('./task-details/task-details-routing.module').then(
         (m) => m.TaskDetailsRoutingModule
