@@ -35,7 +35,17 @@ export const getSelected = createSelector(
   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
 
-export const getFilteredTasks = createSelector(
+export const getQueryConfig = createSelector(
   getTaskState,
-  (state: State) => state.filteredTasks
+  (state: State) => state.queryConfig
+);
+
+export const getFilteredTasks = createSelector(
+  getAllTask,
+  getQueryConfig,
+  (tasks, config) =>
+    tasks.filter(
+      (task) =>
+        config?.completed === undefined || task.completed === config.completed
+    )
 );

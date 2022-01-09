@@ -19,11 +19,11 @@ export class TaskFacade {
     this.store.dispatch(TaskActions.loadAllTasks());
   }
 
-  filterTasks(config: QueryConfig): void {
-    this.store.dispatch(TaskActions.filterTasks({ config }));
+  filterTasks(queryConfig: QueryConfig): void {
+    this.store.dispatch(TaskActions.filterTasks({ queryConfig }));
   }
 
   toggleTask(task: Task) {
-    console.log(task);
+    this.store.dispatch(TaskActions.toggleTask({ task }));
   }
 }

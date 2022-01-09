@@ -14,5 +14,10 @@ export const loadTasksFailure = createAction(
 
 export const filterTasks = createAction(
   '[Task] Filter Tasks',
-  props<{ config: QueryConfig }>()
+  props<{ queryConfig: QueryConfig }>()
+);
+
+export const toggleTask = createAction(
+  '[Task] Toggle Task',
+  props<{ task: Task }>()
 );
