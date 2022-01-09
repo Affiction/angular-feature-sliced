@@ -10,7 +10,7 @@
     <ng-container *ngIf="taskFacade.filteredTasks$ | async as tasks;">
       <ng-container *ngIf="tasks.length > 0; else empty;">
         <fs-task-row
-          *ngFor="let task of tasks"
+          *ngFor="let task of tasks; trackBy: trackByTaskId"
           [task]="task"
           class="task-list__row"
           (click)="router.navigate(['/task-details', task.id])"

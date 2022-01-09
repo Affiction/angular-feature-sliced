@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskFacade } from 'entities/task';
 import { filter, tap } from 'rxjs/operators';
+import { Task } from 'shared/api';
 
 @Component({
   selector: 'fs-tasks-list',
@@ -21,4 +22,8 @@ export class TasksListPage {
     public readonly taskFacade: TaskFacade,
     public readonly router: Router
   ) {}
+
+  trackByTaskId(id: number, task: Task) {
+    return task.id;
+  }
 }
