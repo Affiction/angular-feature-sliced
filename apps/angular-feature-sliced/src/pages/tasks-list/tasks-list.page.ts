@@ -15,7 +15,7 @@ export class TasksListPage implements OnInit {
     this.taskFacade.loadTasks();
   }
 
-  taskTrackBy(_: number, task: Task) {
+  taskTrackBy(_: number, task: Task): number {
     return task.id;
   }
 }
