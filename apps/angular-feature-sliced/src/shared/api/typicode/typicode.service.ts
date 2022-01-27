@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'environments/environment';
+import { environment } from 'environments';
 import { Observable } from 'rxjs';
 
 import type { Task } from './models';
@@ -13,7 +13,7 @@ export type GetTasksListParams = {
 
 export type GetTaskByIdParams = {
   taskId: number;
-  [key: string]: any;
+  [key: string]: string | number;
 };
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { TASK_FEATURE_KEY, State, taskAdapter } from './task.reducer';
 import { routerModel } from 'shared/lib';
+import { TASK_FEATURE_KEY, State, taskAdapter } from './task.reducer';
 
 export const getTaskState = createFeatureSelector<State>(TASK_FEATURE_KEY);
 

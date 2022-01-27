@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TaskModule } from 'entities/task';
+import { SharedModule, UiKitModule } from 'shared';
 import { TasksFilterModule } from 'features/tasks-filter';
 import { ToggleTaskModule } from 'features/toggle-task';
-import { SharedModule, UiKitModule } from 'shared';
+import { TaskModule } from 'entities/task';
 
 import { TasksListPage } from './tasks-list.page';
 

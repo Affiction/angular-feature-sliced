@@ -4,8 +4,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NxModule } from '@nrwl/angular';
+import { environment } from 'environments';
 
-import { environment } from 'environments/environment';
 import { metaReducers, ROOT_REDUCERS, rootEffects } from './store';
 
 @NgModule({
