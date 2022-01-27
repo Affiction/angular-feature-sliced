@@ -1,5 +1,10 @@
 {
-  "extends": ["../../.eslintrc.json", "@feature-sliced"],
+  "extends": [
+    "../../.eslintrc.json",
+    "@feature-sliced/eslint-config/rules/import-order",
+    "@feature-sliced/eslint-config/rules/public-api",
+    "@feature-sliced/eslint-config/rules/layers-slices"
+  ],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
