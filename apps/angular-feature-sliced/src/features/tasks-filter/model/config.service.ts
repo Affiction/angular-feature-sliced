@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { taskModel } from 'entities/task';
+import { TaskModel } from 'entities/task';
 
 export type Filter = {
   id: number;
   title: string;
-  config: taskModel.QueryConfig;
+  config: TaskModel.QueryConfig;
 };
 
 export const DEFAULT_FILTER = 1;

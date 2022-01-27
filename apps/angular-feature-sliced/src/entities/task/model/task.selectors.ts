@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { routerModel } from 'shared/lib';
+import { RouterModel } from 'shared/lib';
 import { TASK_FEATURE_KEY, State, taskAdapter } from './task.reducer';
 
 export const getTaskState = createFeatureSelector<State>(TASK_FEATURE_KEY);
@@ -31,7 +31,7 @@ export const getTaskEntities = createSelector(getTaskState, (state: State) =>
 
 export const getSelected = createSelector(
   getTaskEntities,
-  routerModel.selectRouteParam('id'),
+  RouterModel.selectRouteParam('id'),
   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
 

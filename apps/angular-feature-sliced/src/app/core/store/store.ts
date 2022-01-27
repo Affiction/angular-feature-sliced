@@ -1,8 +1,8 @@
 import { InjectionToken, Type } from '@angular/core';
-import * as fromRouter from '@ngrx/router-store';
+import * as FromRouter from '@ngrx/router-store';
 import { Action, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from 'environments';
-import { taskModel } from 'entities/task';
+import { TaskModel } from 'entities/task';
 
 /**
  * Every reducer module's default export is the reducer function it¬self. In
@@ -15,8 +15,8 @@ import { taskModel } from 'entities/task';
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface State {
-  router: fromRouter.RouterState;
-  [taskModel.TASK_FEATURE_KEY]: taskModel.State;
+  router: FromRouter.RouterState;
+  [TaskModel.TASK_FEATURE_KEY]: TaskModel.State;
 }
 
 /**
@@ -28,8 +28,8 @@ export const ROOT_REDUCERS = new InjectionToken<
   ActionReducerMap<State, Action>
 >('Root reducers token', {
   factory: () => ({
-    router: fromRouter.routerReducer,
-    [taskModel.TASK_FEATURE_KEY]: taskModel.reducer,
+    router: FromRouter.routerReducer,
+    [TaskModel.TASK_FEATURE_KEY]: TaskModel.reducer,
   }),
 });
 
@@ -42,4 +42,4 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   ? []
   : [];
 
-export const rootEffects: Type<unknown>[] = [taskModel.TaskEffects];
+export const rootEffects: Type<unknown>[] = [TaskModel.TaskEffects];

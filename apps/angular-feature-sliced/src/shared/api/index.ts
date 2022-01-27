@@ -1,2 +1,2 @@
-export * as typicodeApi from './typicode';
+export * as TypicodeApi from './typicode';
 export * from './models';

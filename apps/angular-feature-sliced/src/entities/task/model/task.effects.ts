@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/angular';
 import { map } from 'rxjs/operators';
-import { typicodeApi } from 'shared/api';
+import { TypicodeApi } from 'shared/api';
 
 import * as TaskActions from './task.actions';
 import * as TaskFeature from './task.reducer';
@@ -26,6 +26,6 @@ export class TaskEffects {
   constructor(
     private readonly actions$: Actions,
     private readonly dataPersistence: DataPersistence<TaskFeature.TaskPartialState>,
-    private readonly typicodeApi: typicodeApi.TypicodeService
+    private readonly typicodeApi: TypicodeApi.TypicodeService
   ) {}
 }
