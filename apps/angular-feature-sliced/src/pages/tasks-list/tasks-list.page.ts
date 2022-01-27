@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TaskFacade } from 'entities/task';
 import { filter, tap } from 'rxjs/operators';
+import { TaskFacade } from 'entities/task';
 import { Task } from 'shared/api';
 
 @Component({

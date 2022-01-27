@@ -40,6 +40,7 @@
     "@angular/cli": "~13.1.0",
     "@angular/compiler-cli": "~13.1.0",
     "@angular/language-service": "~13.1.0",
+    "@feature-sliced/eslint-config": "^0.1.0-beta",
     "@ngrx/schematics": "~13.0.0",
     "@ngrx/store-devtools": "~13.0.0",
     "@nrwl/cli": "13.4.1",

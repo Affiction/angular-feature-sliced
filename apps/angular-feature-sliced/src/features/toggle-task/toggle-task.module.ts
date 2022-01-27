@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { TaskModule } from 'entities/task';
 import { SharedModule, UiKitModule } from 'shared';
+import { TaskModule } from 'entities/task';
 
 import { ToggleTaskComponent } from './components';
 
