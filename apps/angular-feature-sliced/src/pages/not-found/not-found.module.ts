@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'shared';
+import { SharedModule } from 'shared/lib';
 
 import { NotFoundPage } from './not-found.page';
 

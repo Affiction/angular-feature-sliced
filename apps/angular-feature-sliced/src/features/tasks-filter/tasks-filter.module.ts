@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { UiKitModule, SharedModule } from 'shared';
+import { SharedModule } from 'shared/lib';
+import { UiKitModule } from 'shared/ui';
 
 import { TasksFilterComponent } from './components';
 import { ConfigService } from './model';

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule, UiKitModule } from 'shared';
+import { SharedModule } from 'shared/lib';
+import { UiKitModule } from 'shared/ui';
 
 import { TaskCardComponent, TaskRowComponent } from './components';
 import { TaskStatusPipe } from './lib';
