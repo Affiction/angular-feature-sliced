@@ -1,1 +1,1 @@
-export * from './toggle-task/toggle-task.component';
+export * from './toggle-task';
