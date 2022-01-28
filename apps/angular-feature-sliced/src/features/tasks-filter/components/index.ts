@@ -1,1 +1,1 @@
-export * from './tasks-filter/tasks-filter.component';
+export * from './tasks-filter';
